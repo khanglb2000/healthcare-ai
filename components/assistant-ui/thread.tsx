@@ -22,6 +22,7 @@ import { Button } from "@/components/ui/button";
 import { MarkdownText } from "@/components/assistant-ui/markdown-text";
 import { TooltipIconButton } from "@/components/assistant-ui/tooltip-icon-button";
 import { ToolFallback } from "./tool-fallback";
+import { PdfUploadButton } from "../file/PdfUploader";
 
 export const Thread: FC = () => {
   return (
@@ -126,6 +127,15 @@ const Composer: FC = () => {
 const ComposerAction: FC = () => {
   return (
     <>
+      <PdfUploadButton />
+      {/* <TooltipIconButton
+        tooltip="Upload"
+        variant="default"
+        className="my-2.5 mr-1.5 size-8 p-2 transition-opacity ease-in"
+      >
+        <Paperclip />
+      </TooltipIconButton> */}
+
       <ThreadPrimitive.If running={false}>
         <ComposerPrimitive.Send asChild>
           <TooltipIconButton
